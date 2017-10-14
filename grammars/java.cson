@@ -31,13 +31,13 @@
       {
         # http://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html
         'match': '''(?x)\\b(?<!\\$)
-                    (abstract|assert|boolean|break|byte|case|catch|char|class|
-                    const|continue|default|do|double|else|enum|extends|final|
-                    finally|float|for|goto|if|implements|import|instanceof|int|
-                    interface|long|native|new|package|private|protected|public|
-                    return|short|static|strictfp|super|switch|syncronized|this|
-                    throw|throws|transient|try|void|volatile|while|
-                    true|false|null)\\b
+                    (abstracto|afirmar|booleano|interrumpir|byte|caso|captura|cara|clase|
+                    const|continua|predet|haz|doble|entonces|enum|extiende|final|
+                    finalmente|flota|para|ira|si|implementa|importar|instantede|entero|
+                    interfaz|largo|nativo|nuevo|paquete|privado|protegido|publico|
+                    devolver|corto|estatico|strictfp|super|cambia|sincronizado|esto|
+                    lanzar|lanza|transitorio|tratar|vacio|volatil|mientras|
+                    verdad|falso|nulo)\\b
                   '''
         'name': 'invalid.illegal.character_not_allowed_here.java'
       }
@@ -79,13 +79,7 @@
       {
         # http://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html
         'match': '''(?x)\\b(?<!\\$)
-                    (abstract|assert|boolean|break|byte|case|catch|char|class|
-                    const|continue|default|do|double|else|enum|extends|final|
-                    finally|float|for|goto|if|implements|import|instanceof|int|
-                    interface|long|native|new|package|private|protected|public|
-                    return|short|static|strictfp|super|switch|syncronized|this|
-                    throw|throws|transient|try|void|volatile|while|
-                    true|false|null)\\b
+                 (abstracto|afirmar|booleano|interrumpir|byte|caso|captura|cara|clase|const|continua|predet|haz|doble|entonces|enum|extiende|final|                     finalmente|flota|para|ira|si|implementa|importar|instantede|entero|                     interfaz|largo|nativo|nuevo|paquete|privado|protegido|publico|                     devolver|corto|estatico|strictfp|super|cambia|sincronizado|esto|                     lanzar|lanza|transitorio|tratar|vacio|volatil|mientras|                     verdad|falso|nulo)\\b
                   '''
         'name': 'invalid.illegal.character_not_allowed_here.java'
       }
@@ -153,7 +147,7 @@
       }
     ]
   'anonymous-classes-and-new':
-    'begin': '\\bnew\\b'
+    'begin': '\\bnuevo\\b'
     'beginCaptures':
       '0':
         'name': 'keyword.control.new.java'
@@ -206,13 +200,13 @@
       }
     ]
   'class':
-    'begin': '(?=\\w?[\\w\\s]*(?:class|(?:@)?interface|enum)\\s+\\w+)'
+    'begin': '(?=\\w?[\\w\\s]*(?:clase|(?:@)?interface|enum)\\s+\\w+)'
     'end': '}'
     'endCaptures':
       '0':
         'name': 'punctuation.section.class.end.bracket.curly.java'
     'name': 'meta.class.java'
-    'patterns': [
+    'patterns': 
       {
         'include': '#storage-modifiers'
       }
@@ -228,7 +222,7 @@
             'name': 'storage.modifier.java'
           '2':
             'name': 'entity.name.type.class.java'
-        'match': '(class|(?:@)?interface|enum)\\s+(\\w+)'
+        'match': '(clase|(?:@)?interface|enum)\\s+(\\w+)'
         'name': 'meta.class.identifier.java'
       }
       {
@@ -472,7 +466,7 @@
       'name': 'comment.block.javadoc.java'
       'patterns': [
         {
-          'match': '@(author|deprecated|return|see|serial|since|version)\\b'
+          'match': '@(autor|depreciado|devolver|ver|serial|desde|version)\\b'
           'name': 'keyword.other.documentation.javadoc.java'
         }
         {
@@ -484,7 +478,7 @@
               'name': 'variable.parameter.java'
         }
         {
-          'match': '(@(?:exception|throws))\\s+(\\S+)'
+          'match': '(@(?:excepcion|lanza))\\s+(\\S+)'
           'captures':
             '1':
               'name': 'keyword.other.documentation.javadoc.java'
@@ -492,7 +486,7 @@
               'name': 'entity.name.type.class.java'
         }
         {
-          'match': '{(@link)\\s+(\\S+)?#([\\w$]+\\s*\\([^\\(\\)]*\\)).*}'
+          'match': '{(@enlace)\\s+(\\S+)?#([\\w$]+\\s*\\([^\\(\\)]*\\)).*}'
           'captures':
             '1':
               'name': 'keyword.other.documentation.javadoc.java'
@@ -507,7 +501,7 @@
     'patterns': [
       # try block
       {
-        'begin': '\\btry\\b'
+        'begin': '\\btratar\\b'
         'beginCaptures':
           '0':
             'name': 'keyword.control.try.java'
@@ -550,7 +544,7 @@
       }
       # catch block (with "parameters")
       {
-        'begin': '\\b(catch)\\b\\s*(?=\\(\\s*[^\\s]+\\s*[^)]+\\))'
+        'begin': '\\b(captura)\\b\\s*(?=\\(\\s*[^\\s]+\\s*[^)]+\\))'
         'beginCaptures':
           '1':
             'name': 'keyword.control.catch.java'
@@ -593,7 +587,7 @@
       }
       # finally block
       {
-        'begin': '\\bfinally\\b'
+        'begin': '\\bfinalmente\\b'
         'beginCaptures':
           '0':
             'name': 'keyword.control.finally.java'
@@ -622,11 +616,11 @@
   'constants-and-special-vars':
     'patterns': [
       {
-        'match': '\\b(true|false|null)\\b'
+        'match': '\\b(verdad|falso|nulo)\\b'
         'name': 'constant.language.java'
       }
       {
-        'match': '\\bthis\\b'
+        'match': '\\besto\\b'
         'name': 'variable.language.this.java'
       }
       {
@@ -645,7 +639,7 @@
         'name': 'punctuation.bracket.angle.java'
     'patterns': [
       {
-        'match': '\\b(extends|super)\\b'
+        'match': '\\b(extiende|super)\\b'
         'name': 'storage.modifier.$1.java'
       }
       {
@@ -733,7 +727,7 @@
   'keywords':
     'patterns': [
       {
-        'match': '\\bthrow\\b'
+        'match': '\\blanzar\\b'
         'name': 'keyword.control.throw.java'
       }
       {
@@ -741,11 +735,11 @@
         'name': 'keyword.control.ternary.java'
       }
       {
-        'match': '\\b(return|break|case|continue|default|do|while|for|switch|if|else)\\b'
+        'match': '\\b(devolver|interrumpir|caso|continua|predet|haz|mientras|para|cambia|si|entonces)\\b'
         'name': 'keyword.control.java'
       }
       {
-        'match': '\\b(instanceof)\\b'
+        'match': '\\b(instantede)\\b'
         'name': 'keyword.operator.instanceof.java'
       }
       {
@@ -812,7 +806,7 @@
       }
     ]
   'methods':
-    'begin': '(?!new)(?=[\\w<].*\\s+)(?=([^=/]|/(?!/))+\\()'
+    'begin': '(?!nuevo)(?=[\\w<].*\\s+)(?=([^=/]|/(?!/))+\\()'
     'end': '(})|(?=;)'
     'endCaptures':
       '1':
@@ -1080,7 +1074,7 @@
   'primitive-arrays':
     'patterns': [
       {
-        'begin': '\\b(void|boolean|byte|char|short|int|float|long|double)\\b\\s*(?=\\[)'
+        'begin': '\\b(vacio|booleano|byte|cara|corto|entero|flota|largo|doble)\\b\\s*(?=\\[)'
         'beginCaptures':
           '1':
             'name': 'storage.type.primitive.array.java'
@@ -1096,7 +1090,7 @@
       }
     ]
   'primitive-types':
-    'match': '\\b(void|boolean|byte|char|short|int|float|long|double)\\b'
+    'match': '\\b(vacio|booleano|byte|cara|corto|entero|flota|largo|doble)\\b'
     'name': 'storage.type.primitive.java'
   'properties':
     'patterns': [
@@ -1129,7 +1123,7 @@
       }
     ]
   'storage-modifiers':
-    'match': '\\b(public|private|protected|static|final|native|synchronized|abstract|threadsafe|transient|volatile|default|strictfp)\\b'
+    'match': '\\b(publico|privada|protegido|estatico|final|nativo|sincronizado|abstracto|threadsafe|transitorio|volatil|predet|strictfp)\\b'
     'name': 'storage.modifier.java'
   'strings':
     'patterns': [
